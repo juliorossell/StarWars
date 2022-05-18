@@ -1,0 +1,60 @@
+
+
+<div class="flex-column al-center jc-center">
+  <div class="minw-800p maxw-1200p">
+    <mat-card *ngIf="filmDetail; else loading" class="mb-2">
+      <mat-card-header>
+        <mat-card-title>{{ filmDetail.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="flex-row">
+          <img class="img-card" src="assets/images/films/episode-{{filmDetail.episode_id}}.png" alt="">
+          <div class="prl-2 flex-column">
+            <h2>Summary</h2>
+            {{ filmDetail.opening_crawl }}
+
+            <h3>Director</h3>
+            {{ filmDetail.director }}
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <ng-template #loading>
+      <mat-card class="mb-2 minw-800p">
+        <div class="flex-row al-center jc-center minh-480p">
+          <img src="assets/images/commons/ico_loader.gif">
+        </div>
+      </mat-card>
+
+    </ng-template>
+
+
+    <h2>List of characters</h2>
+    <div class="flex-gap" *ngIf="characters && characters.length; else characterLoading">
+      <ng-container *ngFor="let item of characters;">
+        <mat-card class="gap-20">
+          <mat-card-header>
+            <mat-card-title  [routerLink]="['/character/', item.id]"  >{{ item.name  }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <img class="img" src="assets/images/characters/{{item.id}}.png" alt="">
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+    </div>
+
+    <ng-template #characterLoading>
+      <mat-card class="mb-2 minw-800p">
+        <div class="flex-row al-center jc-center minh-480p">
+          <img src="assets/images/commons/ico_loader.gif">
+        </div>
+      </mat-card>
+
+    </ng-template>
+
+
+  </div>
+
+
+</div>
