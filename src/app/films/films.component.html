@@ -1,0 +1,31 @@
+
+
+<div class="flex-column al-center jc-center">
+  <div class="minw-800p maxw-1000p">
+    <h2>Complete Star Wars Saga</h2>
+    <div class="flex-gap" *ngIf="films && films.length; else loading">
+      <ng-container *ngFor="let item of films">
+        <mat-card class="gap-30">
+          <mat-card-header>
+            <mat-card-title [routerLink]="['/film/', item.id]">{{ item.title  }}</mat-card-title>
+            <mat-card-subtitle>{{ item.release_date | date }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <img class="img-card" src="assets/images/films/episode-{{item.episode_id}}.png" alt="">
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+    </div>
+
+    <ng-template #loading>
+      <div class="minw-800p">
+        <div class="flex-row al-center jc-center minh-480p">
+          <img src="assets/images/commons/ico_loader.gif">
+        </div>
+      </div>
+    </ng-template>
+
+  </div>
+
+
+</div>

@@ -1,1 +1,122 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  background-color: rgb(241, 245, 249);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.jc-center{
+  justify-content: center;
+}
+
+.jc-between{
+  justify-content: space-between;
+}
+
+.jc-around{
+  justify-content: space-around;
+}
+
+.al-center{
+  align-items: center;
+}
+
+
+.img-card{
+  border: 1px solid rgb(241, 245, 249);
+  border-radius: 4px;
+  width:  270px;
+  height:  360px;
+}
+
+.prl-2{
+  padding-right: 2em;
+  padding-left: 2em;
+}
+
+.mb-1{
+  margin-bottom: 1em;
+}
+
+.ml-1 {
+  margin-left: 1em;
+}
+
+.mb-2{
+  margin-bottom: 2em;
+}
+
+label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+label span {
+  font-weight: 400;
+}
+
+
+.minh-480p{
+  min-height: 480px;
+}
+
+.minw-800p {
+  min-width: 800px;
+}
+
+.maxw-1200p {
+  max-width: 1200px;
+}
+
+.maxw-1000p {
+  max-width: 1000px;
+}
+
+.mr-2{
+  margin-right: 2em;
+}
+
+
+.flex-gap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-gap > * {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.gap-30 {
+  width: calc(30% - 16px);
+}
+
+.gap-20 {
+  width: calc(19% - 32px);
+}
+
+mat-card-title[ng-reflect-router-link] {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+mat-card-title:hover[ng-reflect-router-link] {
+  text-decoration: underline;
+}
